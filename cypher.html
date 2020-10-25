@@ -1,0 +1,170 @@
+<style type="text/css" media="screen">
+    /*
+    .nodes-image {
+        margin:-100;
+    }
+    */
+    @import url("//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css");
+
+    .imageblock .content img,
+    .image img {
+        max-width: 900px;
+        max-height: 300px;
+    }
+
+    .deck h3,
+    .deck h4 {
+        display: block !important;
+        margin-bottom: 8px;
+        margin-top: 5px;
+    }
+
+    .listingblock {
+        margin: 8px;
+    }
+
+    .pull-bottom {
+        position: relative;
+        bottom: 1em;
+    }
+
+    .admonitionblock td.icon [class^="fa icon-"] {
+        font-size: 2.5em;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, .5);
+        cursor: default
+    }
+
+    .admonitionblock td.icon .icon-note:before {
+        content: "\f05a";
+        color: #19407c
+    }
+
+    .admonitionblock td.icon .icon-tip:before {
+        content: "\f0eb";
+        text-shadow: 1px 1px 2px rgba(155, 155, 0, .8);
+        color: #111
+    }
+
+    .admonitionblock td.icon .icon-warning:before {
+        content: "\f071";
+        color: #bf6900
+    }
+
+    .admonitionblock td.icon .icon-caution:before {
+        content: "\f06d";
+        color: #bf3400
+    }
+
+    .admonitionblock td.icon .icon-important:before {
+        content: "\f06a";
+        color: #bf0000
+    }
+
+    .admonitionblock.note.speaker {
+        display: none;
+    }
+</style>
+<style type="text/css" media="screen">
+    /* #editor.maximize-editor .CodeMirror-code { font-size:24px; line-height:26px; } */
+</style>
+<article class="guide" ng-controller="AdLibDataController">
+    <carousel class="deck container-fluid">
+        <!--slide class="row-fluid">
+          <div class="col-sm-3">
+            <h3>Exercise 1</h3>
+            <p class="lead">Information</p>
+                <!dl>
+                    
+                    
+                    
+                    
+                    
+                </dl>
+            </div>
+          <div class="col-sm-9">
+            <figure>
+              <img style="width:300px" src=""/>
+            </figure>
+          </div>
+        </slide-->
+
+
+        <h4>Osnovni ukazi</h4>
+
+        <slide class="row-fluid">
+            <div class="col-sm-12">
+                <h3>Vaja 2: Cypher</h3>
+                <div class="listingblock">
+                    <div class="content">
+                        <pre mode="cypher"
+                            class="highlight pre-scrollable programlisting cm-s-neo code runnable standalone-example ng-binding"
+                            data-lang="cypher"
+                            lang="cypher"><!--code class="cypher language-cypher"-->MATCH (m:Oznaka) -[r:IME_RELACIJE]->(n:OZNAKA1) RETURN m<!--/code--></pre>
+                    </div>
+                </div>
+            </div>
+        </slide>
+
+        <slide class="row-fluid">
+            <div class="col-sm-12">
+                <h3>Vaja 2: Cypher ukazi</h3>
+                <br />
+                <div>
+                    <div class="ulist">
+                        <ul>
+                            <li>
+                                <p><strong>Vaja 2.1</strong>: Vizualiziraj <em>VSE</em> vrste vozlišč, a ne več kot 30 </p>
+                            </li>
+                            <li>
+                                <p><strong>Vaja 2.2</strong>: Vizualiziraj samo vozlišča <em>Person</em>, pokaži samo
+                                    vozlišča <em>Movie</em>, nastavi <em>LIMIT</em> na 30</p>
+                            </li>
+                            <li>
+                                <p><strong>Vaja 2.3</strong>: Vizualiziraj povezave <em>ACTED_IN</em></p>
+                            </li>
+                            <li>
+                                <p><strong>Vaja 2.3.1</strong> Najdi vse filke, ki so kakorkoli povezani s poljubnim igralcem ("Tom Hanks" je dobra izbira, ker ima različne povezave)</p>
+                            </li>
+                            <li>
+                                <p><strong>Vaja 2.4</strong>: Najdi vse filme, kjer je vsaj en igralec rojen po letu 1970 <em>ACTED_IN</em></p>
+                            </li>
+                            <li>
+                                <p><strong>Vaja 2.5</strong>: Najdi vse filme, izdane pred letom 1970, ki so ocenjeni bolje kot z oceno 50</p>
+                            </li>
+                            <li>
+                                <p><strong>Vaja 2.6</strong>: Najdi vse filme, z oceno boljšo od 2, kjer ocenjevalec ne sledi nobenemu drugemu</p>
+                            </li>
+                            <li>
+                                <p><strong>Vaja 2.7</strong>: Najdi vse filme, z oceno boljšo od 2, kjer ocenjevalec sledi nekemu drugemu ocenjevalcu</p>
+                            </li>
+                            <li>
+                                <p><strong>Vaja 2.8</strong>: Izpiši ime in letnico rojstva vseh igralcev, ki so hkrati tudi režiserji (pri istem filmu)</p>
+                            </li>
+                            <li>
+                                <p><strong>Vaja 2.9</strong>: Pojasni poizvedbo <pre mode="cypher"
+                                    class="highlight pre-scrollable programlisting cm-s-neo code runnable standalone-example ng-binding"
+                                    data-lang="cypher"
+                                    lang="cypher"><!--code class="cypher language-cypher"-->MATCH (p1:Person)-[:DIRECTED]->(m:Movie)<-[:ACTED_IN]-(p2:Person)-[:DIRECTED]->(:Movie) RETURN p1, m<!--/code--></p>
+                            </li>
+                            <li>
+                                <p><strong>Vaja 2.10</strong>: V katerih vlogah je vse nastopil "Tom Hanks"<strong>
+                            </li>
+                            <li>
+                                <p><strong>Vaja 2.11</strong>: Izpiši vse filme, ki majo več kot enega režiserja<strong>
+                            </li>
+                            <li>
+                                <p><strong>Vaja 2.12</strong>: Najdi vse filme, ki imajo v oceni "fun" (uporabi ukaz <em>CONTAINS</em> in funkcijo toLower/toUper)</p>
+                            </li>
+                            <li>
+                                <p><strong>Vaja 2.13</strong>: Najdi vse realcije, ki imajo dodaten podatek "rating" (uporabi funkcijo exists)</p>
+                            </li>
+                            <li>
+                                <p><strong>Vaja 2.14</strong>: Najdi filme, ki imajo naslovno vlogo (ukaz IN je lahko v pomoč)</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </slide>
+    </carousel>
+</article>
