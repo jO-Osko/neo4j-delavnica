@@ -1,11 +1,11 @@
 # Neo4j
 
-## Predpriprava
+## Predpriprava (doma)
 
 1. Naložite si neo4j <https://neo4j.com/download/>
 1. Prijavite se na delavnico, da dobite študentsko licenco
 
-## Delavnica
+## Delavnica (na delavnici)
 
 - Odprite neo4j desktop
 - Naredi nov projekt
